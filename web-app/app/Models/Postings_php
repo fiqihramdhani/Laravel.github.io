@@ -1,0 +1,106 @@
+<?php
+
+namespace App\Models;
+
+use App\Models\Posting as ModelsPosting;
+
+class Posting
+{
+
+      Category::create ([
+    "name" => "Profile",
+    "slug" => "profile"
+
+]);
+
+
+       Category::create ([
+    "name" => "Pesona Indonesia",
+    "slug" => "pesona-indonesia"
+
+]);
+
+        Category::create ([
+    "name" => "Web Programming",
+    "slug" => "web-programming"
+
+]);
+
+About::create ([
+        "Title"   => "ABOUT ME",
+        "Image"   => "Baru.jpg",
+        "Nama"    => "Fiqih Ramdhani",
+        "Alamat"  => "Jakarta.11850 , Indonesia",
+        "Email"   => "fiqih.ramdhani1213@gmail.com",
+        "Deskripsi"  => "Saya adalah Fiqih Ramdhani umur 25 Tahun, kegiatan sehari hari saya adalah  membuat program berskala kecil untuk melatih kemampuan saya dalam web development. tujuan saya membuat website tentang Pesona Indonesia karena Saya sangat mencintai Negara Indonesia. Indonesia mempunyai banyak Budaya dan Keindahan alam yang harus diekspos. banyak orang luar yang belum mengetahui betapa indahnya Indonesia . Selain kemampuan saya dalam WEB DEVELOPMENT , Saya juga tertarik untuk  mendaki gunung yang ada di Indonesia . Pengalaman pertama Saya mendaki gunung yaitu Gunung Salak. Sering kita jumpai akan mitos-mitos yang beredar di Masyarakat tentang Gunung Salak. Menurut Pengalaman Saya Gunung Salak sangat nikmat untuk kita kunjungi, sebab selama pendakian dan trek yang saya telusuri banyak sumber air. Tapi kekurangannya adalah jalur dan trek yang dikelilingi oleh Hutan . Jika ingin mendaki , saran saya untuk para pemula haruslah membawa teman yang sudah pernah mendaki Gunung Salak , agar kalian tidak tersesat dan sampai menuju Puncak Gunung Salak dengan selamat. "
+        ])
+
+About::create ([
+        "Title"   => "ABOUT ME",
+        "Image"   => "MyPhoto.jpg",
+        "Nama"    => "Fiqih Ramdhani",
+        "Alamat"  => "Jakarta| 11850 |Indonesia",
+        "Email"   => "fiqih.ramdhani1213@gmail.com",
+        "Deskripsi"  => "Hobby saya bermain gitar sebagimana uuntuk menghibur saya jika sedang suntuk. Saya Juga bisa bermain fingerstyle untuk beberapa lagu yang Saya kuasai. Saya juga menguasai beberapa keahlian diantaranya: MS.OFFICE, PHP, Java, Servis tv. Semua Saya pelajari karena saya tahu itu adalah Ilmu yang sangat berharga. untuk kedepannya Saya ingin menguasai beberapa bahasa pemrograman lain. Karna saya sangat programming merupakan sebuah passion untuk Saya. Masih banyak hal yang harus saya beritahu namun terlalu panjang jika di deskripsikan di sini semua.  "
+        ])
+
+
+About::create ([
+        "Title"   => "MY JOB",
+        "Image"   => "Indihome.png",
+        "Nama"    => "Sales Indihome",
+        "Alamat"  => "Jakarta | 11850 | Indonesia",
+        "Email"   => "fiqih.ramdhani1213@gmail.com",
+        "Deskripsi"  => "Pengalaman kerja Saya sebagai Sales Indihome . Indihome adalah salah satu provider internet wifi milik Telkom Indonesia. Kecepatan yang di tawarkan mulai dari 20 mbps sampai 100 Mps. Dengan Harga yang terjangkau memungkin customer dapat menikmati layanan internet wifi Indihome sepuasnya. Harga Mulai dari 350 ribu per Bulan -  Hingga 800ribu perbulan dengan kecepatan 100 mbps.  "
+        ])
+
+About::create ([
+        "Title"   => "MY JOB",
+        "Image"   => "Kompas.png",
+        "Nama"    => "Interviewer",
+        "Alamat"  => "Jakarta | 11850 | Indonesia",
+        "Email"   => "fiqih.ramdhani1213@gmail.com",
+        "Deskripsi"  => "Pengalaman kerja Saya berikutnya adalah sebagai Interviwer Polling Kompas . Saya senang karna pernah menjadi bagian dari kompas. lingkungan kerja yang nyaman membuat Saya ingin kembali Partime disana. pekerjaan yang saya lakukan adalah mencari informasi kepada Narasumber tentang berita yang sedang hangat di perbincangkan . Selain itu saya juga pernah terjun kelapangan untuk mewawancarai narasumber tentang penyakit kusta. lokasi tempat saya kerja tepat di belakang RS Sitanala.  "
+        ])
+
+    Home::create ([
+       "T_Home" => "Web Programming",
+       "J_Home" => "PHP",
+       "user_id"=>1,
+       "category_id" => 3,
+        "slug"  => "judul-kesembilan",
+        "img"   => "PHP.png",
+        "e_Home"  => "PHP: Hypertext Preprocessor[5] (sebelumnya disebut Personal Home Pages) atau hanya PHP saja, adalah bahasa skrip dengan fungsi umum yang terutama digunakan untuk pengembangan web.[6] Bahasa ini awalnya dibuat oleh seorang pemrogram Denmark-Kanada Rasmus Lerdorf pada tahun 1994.[7] Implementasi referensi PHP sekarang diproduksi oleh The PHP Group.[8] PHP awalnya merupakan singkatan dari Personal Home Page,[7] tetapi sekarang merupakan singkatan dari inisialisasi rekursif PHP: Hypertext Preprocessor.[9]",
+       "B_Home" => "PHP: Hypertext Preprocessor[5] (sebelumnya disebut Personal Home Pages) atau hanya PHP saja, adalah bahasa skrip dengan fungsi umum yang terutama digunakan untuk pengembangan web.[6] Bahasa ini awalnya dibuat oleh seorang pemrogram Denmark-Kanada Rasmus Lerdorf pada tahun 1994.[7] Implementasi referensi PHP sekarang diproduksi oleh The PHP Group.[8] PHP awalnya merupakan singkatan dari Personal Home Page,[7] tetapi sekarang merupakan singkatan dari inisialisasi rekursif PHP: Hypertext Preprocessor.[9]
+Kode PHP biasanya diproses di peladen web oleh interpreter PHP yang diimplementasikan sebagai modul, daemon, atau sebagai Common Gateway Interface (CGI) yang bisa dijalankan. Di server web, hasil dari kode PHP yang ditafsirkan dan dieksekusi (dapat berupa semua jenis data, seperti HTML atau data gambar biner) akan membentuk keseluruhan atau sebagian dari respons HTTP. Berbagai sistem templat web, sistem manajemen konten web, dan kerangka kerja web ada yang dapat digunakan untuk mengatur atau memfasilitasi pembuatan respons itu. Selain itu, PHP dapat digunakan untuk banyak tugas pemrograman di luar konteks web, seperti aplikasi grafis mandiri[10] dan kontrol drone robotik.[11] Kode PHP juga dapat langsung dieksekusi dari baris perintah. "
+
+]);
+
+}
+
+Home::create ([
+        "T_Home" => "Web-Programming",
+        "J_Home" => "HTML",
+        "user_id"=>1,
+        "category_id" => 3,
+        "slug"  => "judul-kedelapan",
+        "img"   => "Komputer.jpg",
+        "e_Home"  => " Hypertext Markup Language (HTML) adalah bahasa markah standar untuk dokumen yang dirancang untuk ditampilkan di peramban internet. Ini dapat dibantu oleh teknologi seperti Cascading Style Sheets (CSS) dan bahasa scripting seperti JavaScript dan VBScript.",
+        "B_Home" => "Hypertext Markup Language (HTML) adalah bahasa markah standar untuk dokumen yang dirancang untuk ditampilkan di peramban internet. Ini dapat dibantu oleh teknologi seperti Cascading Style Sheets (CSS) dan bahasa scripting seperti JavaScript dan VBScript.
+Peramban internet menerima dokumen HTML dari server web atau dari penyimpanan lokal dan membuat dokumen menjadi halaman web multimedia. HTML menggambarkan struktur halaman web secara semantik dan isyarat awal yang disertakan untuk penampilan dokumen.
+Elemen HTML digambarkan oleh tag, ditulis menggunakan tanda kurung sudut. Tag seperti <img /> dan <input /> langsung perkenalkan konten ke dalam halaman. Tag lain seperti <p> mengelilingi dan memberikan informasi tentang teks dokumen dan mungkin menyertakan tag lain sebagai sub-elemen. Peramban tidak menampilkan tag HTML, tetapi menggunakannya untuk menafsirkan konten halaman.
+HTML dapat menyematkan program yang ditulis dalam bahasa scripting seperti JavaScript, yang memengaruhi perilaku dan konten halaman web. Dimasukkannya CSS mendefinisikan tampilan dan tata letak konten. World Wide Web Consortium (W3C), mantan pengelola HTML dan pemelihara standar CSS saat ini, telah mendorong penggunaan CSS pada HTML presentasi eksplisit sejak 1997."
+
+]);
+
+ Home::create ([
+        "T_Home" => "Fiqih Ramdhani",
+        "J_Home" => "My Profile",
+        "user_id"=>1,
+        "category_id" => 2,
+        "slug"  => "judul-Pertama",
+        "img"   => "Baru.jpg",
+        "e_Home"  => "Saya adalah Fiqih Ramdhani , Lahir 11 Januari 1997 di Jakarta Barat. Saya adalah seorang Web dan Graphic Designer . Saya lulus tahun 2014 dari SMAN 94 Jakarta Barat. Pengalaman kerja Saya yaitu seorang salesman Indihome dan seorang Pramusaji di kedai Rebusan.  ",
+        "B_Home" => "Saya adalah Fiqih Ramdhani , Lahir 11 Januari 1997 di Jakarta Barat. Saya adalah seorang Web dan Graphic Designer . Saya lulus tahun 2014 dari SMAN 94 Jakarta Barat. Pengalaman kerja Saya yaitu seorang salesman Indihome dan seorang Pramusaji di kedai Rebusan."
+
+        ]);
