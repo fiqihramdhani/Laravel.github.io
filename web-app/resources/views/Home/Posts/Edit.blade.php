@@ -7,7 +7,7 @@
 </div>
 <div class="container">
 <div class="col-lg-6">
-<form action="/Dashboard/Home-Posts/{{ $Post->slug }}" method="post">
+<form action="/Dashboard/Home/Posts/{{ $Post->slug }}" method="post">
 @csrf
 @method('put')
   <div class="mb-3">

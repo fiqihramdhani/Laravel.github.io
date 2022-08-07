@@ -7,7 +7,7 @@
     </div>
     <div class="carousel-inner">
       <div class="carousel-item active">
-      <img src="https://source.unsplash.com/1200x700?technology">
+      <img src="https://source.unsplash.com/1200x700?Indonesia%20Culture">
         <svg class="bd-placeholder-img" width="100%" height="100%" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
 
         <div class="container">
@@ -23,7 +23,7 @@
         </div>
       </div>
       <div class="carousel-item">
-      <img src="https://source.unsplash.com/1200x700?art" alt="Bali">
+      <img src="https://source.unsplash.com/1200x700?Indonesia" alt="Bali">
         <svg class="bd-placeholder-img" width="100%" height="100%"  aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="true"><rect width="100%" height="100%" fill="#777"/></svg>
 
         <div class="container">
@@ -35,7 +35,7 @@
         </div>
       </div>
       <div class="carousel-item">
-      <img src="https://source.unsplash.com/1200x700?programming" alt="Candi">
+      <img src="https://source.unsplash.com/1200x700?Indonesia%20flag" alt="Candi">
         <svg class="bd-placeholder-img" width="100%" height="100%"  aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
 
         <div class="container">

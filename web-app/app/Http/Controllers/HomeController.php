@@ -11,17 +11,17 @@ class HomeController extends Controller
     {
     return view('Home',[
             "title" => "My Website - Home",
-            "Posts" => Home::latest()->get()
+            "Posts" => Home::latest()->filter(request(['search', 'Category','User']))->paginate(3)->withQueryString()
 
         ]);
     }
 
-    public function show(Home $POST)
+    public function show(Home $Post)
     {
-        return view('Post',[
+        return view('HomePost',[
             "title" => "My Website || Home - Post",
             "active" => "Posts",
-            "Posts" => $POST
+            "Posts" => $Post
         ]);
     }
 }

@@ -39,7 +39,7 @@ and is wrapped around the whole page content, except for the footer in this exam
     </div>
 
     <div class="w3-container " style="text-align: justify">
-      {!! $Posts->Body !!}
+      {!! $Posts->B_Home !!}
       <div class="w3-row mt-5" >
         <div class="w3-col m8 s12">
           <p><a button class="w3-button w3-red  w3-padding-large w3-white w3-border" href="/"><b>Back to Home</b></button></a></p>
