@@ -18,7 +18,7 @@ class HomeController extends Controller
 
     public function show(Home $Post)
     {
-        return view('HomePost',[
+        return view('Homes.HomePost',[
             "title" => "My Website || Home - Post",
             "active" => "Posts",
             "Posts" => $Post

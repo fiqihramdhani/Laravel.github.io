@@ -24,7 +24,7 @@
              <h5 class="mb-5">{{ $Post -> J_Home }} </h5>
              <p class="card-text">{{ $Post -> e_Home }}</p>
              <div class="row d-flex px-5 ">
-             <a href="/{{ $Post -> slug }}" class="btn btn-primary justify-content-center "> Read More</a>
+             <a href="/HomePost/{{ $Post -> slug }}" class="btn btn-primary justify-content-center "> Read More</a>
              </div>
             </div>
          </div>

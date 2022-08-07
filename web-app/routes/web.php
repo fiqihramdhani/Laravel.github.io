@@ -33,7 +33,7 @@ use App\Http\Controllers\DashboardPostController;
 
 
 Route::get('/', [HomeController::class, 'index']);
-Route::get('/{Post:slug}',[HomeController::class, 'show']);
+Route::get('/HomePost/{Post:slug}',[HomeController::class, 'show']);
 
 Route::get('/Blog', [PostController::class, 'index']);
 Route::get('/Post/{Post:slug}',[PostController::class, 'show']);
@@ -69,4 +69,5 @@ Route::resource('/Dashboard/Categories', AdminCategoryController::class)->middle
 
 Route::get('/Dashboard/Home/Posts/homeCheckSlug', [HomePostsController::class, 'homeCheckSlug'])->middleware('auth');
 Route::resource('/Dashboard/Home/Posts', HomePostsController::class)->middleware('auth');
+
 
