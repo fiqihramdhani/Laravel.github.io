@@ -17,12 +17,21 @@
             </a>
           </li>
 
+         <li class="nav-item">
+            <a class="nav-link {{ Request::is('Dashboard/Home/Posts')? 'active': '' }}" href="/Dashboard/Home/Posts">
+              <span data-feather="file-text"></span>
+            Home-Post
+            </a>
+          </li>
+
           <li class="nav-item">
             <a class="nav-link {{ Request::is('Dashboard/Posts')? 'active': '' }}" href="/Dashboard/Posts">
               <span data-feather="file-text"></span>
-             My Posts
+             Blog-Post
             </a>
           </li>
+
+
 
           <h6 class="sidebar-heading d-flex text-muted justify-content-between align-items-center mt-5 mb-3 px-3">Categories</h6>
 

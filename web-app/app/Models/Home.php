@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+
 use Illuminate\Database\Eloquent\Model;
 
 class Home extends Model
@@ -14,9 +14,9 @@ class Home extends Model
     {
     $query->when($filters['search'] ?? false, function($query, $search) {
            return $query->where(function($query) use ($search) {
-                $query->where('Title', 'like', '%' . $search . '%')
-                             ->orWhere('Judul_Posting', 'like', '%' . $search . '%')
-                             ->orWhere('Body', 'like', '%' . $search . '%');
+                $query->where('T_Home', 'like', '%' . $search . '%')
+                             ->orWhere('J_Home', 'like', '%' . $search . '%')
+                             ->orWhere('B_Home', 'like', '%' . $search . '%');
             });
         });
 
@@ -56,7 +56,7 @@ class Home extends Model
     {
         return [
             'slug' => [
-                'source' => 'Title'
+                'source' => 'T_Home'
             ]
         ];
     }

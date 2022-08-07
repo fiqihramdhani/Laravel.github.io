@@ -24,9 +24,10 @@
             </div>
          </div>
        </div>
+
        <div class="col-lg-4">
         <div class="card">
-            <img src="image/bg.jpg" class="card-img-top" alt="...">
+            <img src="" class="card-img-top" alt="...">
             <div class="card-body">
              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
              <div class="row d-flex justify-content-center">
@@ -59,7 +60,7 @@
         <div class="card bg-secondary">
          <div class="card-body">
 
-        <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500"  role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false" src="image/{{ $Posts[0]->img }}">
+        <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500"  role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false" src="">
          </div>
         </div>
       </div>
@@ -67,12 +68,12 @@
         <div class="col-md-7" style="font-family: Times new Rowman">
         <div class="card">
         <div class="card-header text-center">
-    <h2 class="featurette">{{ $Posts[0]->J_Home }}</span></h2>
+    <h2 class="featurette"></span></h2>
         </div>
         </div>
       <div class="card">
          <div class="card-body" style="text-align: justify">
-        <p class="lead">{{ $Posts[0]->e_Home }}</p>
+        <p class="lead"></p>
          </div>
        </div>
        </div>
@@ -84,12 +85,12 @@
       <div class="col-md-7">
       <div class="card">
       <div class="card-header text-center">
-    <h2 class="featurette">{{ $Posts[1]->J_Home }}</h2>
+    <h2 class="featurette"></h2>
       </div>
       </div>
       <div class="card">
          <div class="card-body" style="text-align: justify" style="font-family: times new rowman">
-        <p class="lead">{{ $Posts[1]->e_Home }}</p>
+        <p class="lead"></p>
          </div>
        </div>
        </div>
@@ -98,7 +99,7 @@
         <div class="card bg-secondary">
          <div class="card-body">
 
-        <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false" src="image/{{ $Posts[1]->img }}" alt="">
+        <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false" src="" alt="">
          </div>
         </div>
       </div>

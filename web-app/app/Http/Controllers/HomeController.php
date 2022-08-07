@@ -11,17 +11,17 @@ class HomeController extends Controller
     {
     return view('Home',[
             "title" => "My Website - Home",
-            "Posts" => Home::all()
+            "Posts" => Home::latest()->get()
 
         ]);
     }
 
-    public function show(Home $Post)
+    public function show(Home $POST)
     {
         return view('Post',[
             "title" => "My Website || Home - Post",
             "active" => "Posts",
-            "Posts" => $Post
+            "Posts" => $POST
         ]);
     }
 }
