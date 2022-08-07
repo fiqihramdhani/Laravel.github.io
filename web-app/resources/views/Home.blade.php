@@ -50,33 +50,6 @@
 
     <!-- START THE FEATURETTES -->
 @if($Posts->count()>0)
-    <hr class="featurette-divider">
-
-    <div class="row featurette ">
-      <div class="col-md-7">
-      <div class="card">
-      <div class="card-header text-center">
-    <h2 class="featurette">{{ $Posts[2]->J_Home }}</h2>
-      </div>
-      </div>
-      <div class="card ">
-         <div class="card-body" style="text-align: justify" style="font-family: Times New Rowman" >
-        <p class="lead">{{ $Posts[2]->B_Home }}</p>
-         </div>
-        </div>
-       </div>
-
-      <div class="col-md-5">
-        <div class="card bg-secondary">
-         <div class="card-body">
-
-       <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false" src="image/{{ $Posts[2]->img }}" alt="">
-         </div>
-        </div>
-      </div>
-    </div>
-
-
 
     <hr class="featurette-divider">
 
