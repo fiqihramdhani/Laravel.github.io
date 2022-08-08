@@ -49,7 +49,7 @@
         <div class="card bg-secondary">
          <div class="card-body">
 
-        <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500"  role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false" src="{{ asset('storage/'. $Posts[0]->img) }}"">
+        <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500"  role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false" src="{{ asset('storage/'. $Posts[0]->img) }}">
          </div>
         </div>
       </div>
@@ -60,20 +60,25 @@
     <h2 class="featurette"></span>{{ $Posts[0]->J_Home }}</h2>
         </div>
         </div>
-      <div class="card">
-         <div class="card-body" style="text-align: justify">
-        <p class="lead">{!! $Posts[0]->B_Home !!}</p>
+      <div class="card ">
+         <div class="card-body" style="text-align: center">
+        <p class="lead">{!! $Posts[0]->e_Home !!}</p>
          </div>
+         <div class="row d-flex px-5 ">
+             <a href="/HomePost/{{ $Posts[0] -> slug }}" class="btn btn-primary justify-content-center "> Read More</a>
+             </div>
        </div>
        </div>
     </div>
 
+    <div class="container-fluid text-center mt-3 bg-dark py-4 text-white ">
+    <div class="row featurette">
+    <h1></h1>
+    </div>
+    </div>
+
 
  @endif
-
-    <hr class="featurette-divider">
-
-
 
     <!-- /END THE FEATURETTES -->
 

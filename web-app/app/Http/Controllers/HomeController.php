@@ -11,7 +11,7 @@ class HomeController extends Controller
     {
     return view('Home',[
             "title" => "My Website - Home",
-            "Posts" => Home::latest()->filter(request(['search', 'Category','User']))->paginate(3)->withQueryString()
+            "Posts" => Home::latest()->filter(request(['search', 'Category','User']))->paginate(6)->withQueryString()
 
         ]);
     }
