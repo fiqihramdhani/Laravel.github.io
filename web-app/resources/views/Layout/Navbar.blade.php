@@ -8,7 +8,7 @@
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav me-auto  mb-lg-0 ">
         <li class="nav-item">
-          <a class="nav-link {{ Request::is('Home')? 'active': '' }}" aria-current="page" href="/">Home</a>
+          <a class="nav-link {{ Request::is('/')? 'active': '' }}" aria-current="page" href="/">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link {{ Request::is('Blog')? 'active': '' }}" href="/Blog">Blog</a>
@@ -22,29 +22,19 @@
 
       </ul>
       <ul class="navbar-nav">
-        <form class="d-flex mt-2 px-3" action="/Blog" method="GET" >
-    @if(request('Category'))
-       <input type="hidden" placeholder="Search.." name="Category" style="width: 40%"  value="{{ request('Category') }}">
-    @endif
 
-    @if(request('User'))
-       <input type="hidden" placeholder="Search.." name="User" style="width: 100%"  value="{{ request('User') }}">
-    @endif
-        <input class="form-control me-2" type="text" placeholder="Search" aria-label="Search" name="search" style="width: 100%">
-        <button class="btn btn-success" type="submit">Search</button>
-      </form>
 
        @auth
-        <li class="nav-item dropdown mt-2" >
+        <li class="nav-item dropdown" >
           <a class="nav-link dropdown-toggle text-center"  id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
           Welcome , {{ auth()->User()->name }}
           </a>
 
 
 
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <ul class="dropdown-menu  mt-1 " aria-labelledby="navbarDropdown" style="width: 100%">
            @can('admin')
-            <li><a class="dropdown-item" href="/Dashboard"><i class="bi bi-menu-button-wide" style="padding-right: 25px"></i>Dashboard</a></li>
+            <li><a class="dropdown-item " href="/Dashboard"><i class="bi bi-menu-button-wide" style="margin-right: 25px"></i>Dashboard</a></li>
              <li><hr class="dropdown-divider"></li>
             <li>
 
@@ -53,7 +43,7 @@
 
                 <form action="/SignOut" method="POST">
                 @csrf
-                <button class="dropdown-item" type="submit"><i class="bi bi-box-arrow-right " style="padding-right: 25px"></i>SignOut</button>
+                <button class="dropdown-item " type="submit"><i class="bi bi-box-arrow-right" style="margin-right: 25px"></i>SignOut</button>
 
                 </form>
 
@@ -61,7 +51,7 @@
 
           @else
 
-            <li><a class="btn btn-primary mt-2" href="/Sign">Sign in</a></li>
+            <li><a class="btn btn-primary " href="/Sign">Sign in</a></li>
 
           @endauth
 

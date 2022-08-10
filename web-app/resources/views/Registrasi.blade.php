@@ -1,6 +1,6 @@
 @extends('Layout.Main')
 @section('content')
-<body >
+<body style="background-color: moccasin">
 	<section class="ftco-section">
 		<div class="container mt-5">
 			<div class="row justify-content-center">

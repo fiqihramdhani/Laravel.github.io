@@ -15,7 +15,7 @@
     <div class="row ">
     @foreach($Posts as $Post)
 
-       <div class="col-lg-4">
+       <div class="col-lg-4 w3-white">
         <div class="card">
         @if($Post->img)
             <img src="{{ asset('storage/'. $Post->img) }}" class="card-img-top" alt="...">
@@ -71,9 +71,9 @@
        </div>
     </div>
 
-    <div class="container-fluid text-center mt-3 bg-dark py-4 text-white ">
+    <div class="container-fluid text-center mt-5 bg-dark py-4 text-white ">
     <div class="row featurette">
-    <h1></h1>
+    <h6>Kunjungin <a href="/Blog" class="text-decoration-none" >My Website - Blog</a> untuk melihat Artikel lainnya</h6>
     </div>
     </div>
 

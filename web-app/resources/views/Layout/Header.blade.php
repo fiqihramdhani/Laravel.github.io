@@ -7,7 +7,7 @@
     </div>
     <div class="carousel-inner">
       <div class="carousel-item active">
-      <img src="https://source.unsplash.com/1200x700?Indonesia%20Culture">
+      <img src="https://source.unsplash.com/1200x700?Forest">
         <svg class="bd-placeholder-img" width="100%" height="100%" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
 
         <div class="container">
@@ -23,7 +23,7 @@
         </div>
       </div>
       <div class="carousel-item">
-      <img src="https://source.unsplash.com/1200x700?Indonesia" alt="Bali">
+      <img src="https://source.unsplash.com/1200x700?culture" alt="Bali">
         <svg class="bd-placeholder-img" width="100%" height="100%"  aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="true"><rect width="100%" height="100%" fill="#777"/></svg>
 
         <div class="container">
@@ -35,14 +35,14 @@
         </div>
       </div>
       <div class="carousel-item">
-      <img src="https://source.unsplash.com/1200x700?Indonesia%20flag" alt="Candi">
+      <img src="https://source.unsplash.com/1200x700?Indonesia" alt="Candi">
         <svg class="bd-placeholder-img" width="100%" height="100%"  aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
 
         <div class="container">
           <div class="carousel-caption text-end">
-            <h1>Gallery</h1>
-            <p>Kunjungi juga halaman gallery saya , banyak foto foto tentang diri saya pribadi</p>
-            <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
+            <h1>Halaman Blog</h1>
+            <p>Kunjungi halaman Blog untuk melihat artikel lainnya</p>
+            <p><a class="btn btn-lg btn-primary" href="/Blog">Blog</a></p>
           </div>
         </div>
       </div>

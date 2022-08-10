@@ -1,15 +1,15 @@
 @extends('Layout.Main')
 @section('content')
-<body >
+<body style="background-color: moccasin">
 	<section class="ftco-section">
-		<div class="container mt-5 ">
+		<div class="container mt-5 " >
 			<div class="row justify-content-center ">
 				<div class="col-md-6 col-lg-6">
                 <div class="card">
 
 					<div class="login-wrap p-0">
 <div class="card-header bg-dark text-white " >
-<h2 class="text-center" style="font-family: 'Times New Roman', Times, serif">Registrasi</h2>
+<h2 class="text-center" style="font-family: 'Times New Roman', Times, serif">Sign in</h2>
 <div class="row py-3">
 <img src="image/q1.jpg" alt="Bali">
 </div>
@@ -67,7 +67,7 @@
 	    </div>
 
 	</form>
-              <p class="d-block text-center mt-3 " >Not Registered?  <a href="/Registrasi" style="color: blue;">Register Now!</a></p>
+              <p class="d-block text-center mt-3 " >Not Registered?  <a href="/Registrasi" style="color: rgb(255, 145, 0);">Register Now!</a></p>
 
               </div>
               </div>
