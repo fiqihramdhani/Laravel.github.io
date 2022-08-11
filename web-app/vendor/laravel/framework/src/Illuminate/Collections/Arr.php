@@ -558,13 +558,13 @@ class Arr
 
         try {
             $items = array_map($callback, $array, $keys);
-        } catch (ArgumentCountError) {
+        } catch (ArgumentCountError $keys) {
             $items = array_map($callback, $array);
         }
 
         return array_combine($keys, $items);
-    }
 
+    }
     /**
      * Push an item onto the beginning of an array.
      *
