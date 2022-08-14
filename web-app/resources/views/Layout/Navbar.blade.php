@@ -27,7 +27,7 @@
        @auth
         <li class="nav-item dropdown" >
           <a class="nav-link dropdown-toggle text-center"  id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Welcome , {{ auth()->User()->name }}
+          Welcome , {{ auth()->User()->name }}<i class="bi bi-emoji-sunglasses-fill px-2"></i>
           </a>
 
 

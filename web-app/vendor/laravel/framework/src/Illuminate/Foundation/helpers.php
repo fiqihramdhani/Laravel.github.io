@@ -669,7 +669,7 @@ if (! function_exists('request')) {
             return app('request')->only($key);
         }
 
-        $value = app('request')->get($key);
+        $value = app('request')->__get($key);
 
         return is_null($value) ? value($default) : $value;
     }

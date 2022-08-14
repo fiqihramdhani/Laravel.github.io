@@ -24,7 +24,7 @@ class RegistController extends Controller
     {
    $validate = $request->validate([
     'name' => ['required' , 'max:255', ],
-    'email' => ['required', 'email:dns', 'unique:users' , 'max:255' ],
+    'email' => ['required', 'email', 'unique:users' , 'max:255' ],
     'password' => ['required', 'min:5', 'max:255']
 
 

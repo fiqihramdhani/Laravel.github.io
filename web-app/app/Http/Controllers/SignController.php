@@ -23,7 +23,7 @@ class SignController extends Controller
     {
     $credentials = $request->validate ([
 
-    'email' => ['required', 'email:dns' ],
+    'email' => ['required', 'email' ],
     'password' => ['required', 'min:5', 'max:255']
 
 
