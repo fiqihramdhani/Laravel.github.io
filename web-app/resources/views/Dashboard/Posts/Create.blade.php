@@ -19,8 +19,9 @@
     @enderror
 
   <div class="mb-3 mt-3">
+  <img  class="img-preview img-fluid">
   <label for="img" class="form-label @error('img') is-invalid @enderror ">Image</label>
-  <input class="form-control" type="file" id="img" name="img">
+  <input class="form-control" type="file" id="image" name="img" onchange="previewImage()">
   </div>
    @error('img')
         <div class="invalid-feedback">
@@ -82,7 +83,25 @@ fetch('/Dashboard/Posts/checkSlug?Title='+title.value)
 .then(response => response.json())
 .then(data => slug.value=data.slug)
 
+
+
 });
 
+function previewImage(){
+const image = document.querySelector('#image');
+const imagePreview= document.querySelector('.img-preview');
+
+imagePreview.style.display="block";
+
+const oFReader = new FileReader();
+oFReader.readAsDataURL(image.files[0]);
+
+oFReader.onload = function(oFREvent){
+imagePreview.src = oFREvent.target.result;
+}
+
+}
+
 </script>
+
 @endsection

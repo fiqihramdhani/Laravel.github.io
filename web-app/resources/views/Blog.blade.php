@@ -93,15 +93,16 @@ and is wrapped around the whole page content, except for the footer in this exam
 
   </div>
   </div>
-  <hr>
 
+</div>
+ <hr>
 
 
 
 
 
 <!-- END Introduction Menu -->
-</div>
+
 
 <!-- END GRID -->
 </div><br>

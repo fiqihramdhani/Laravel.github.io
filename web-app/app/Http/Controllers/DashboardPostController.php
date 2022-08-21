@@ -7,6 +7,7 @@ use App\Models\Category;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Storage;
 use Cviebrock\EloquentSluggable\Services\SlugService;
 
 class DashboardPostController extends Controller
@@ -127,6 +128,14 @@ class DashboardPostController extends Controller
 
     }
     $validateData =$request->validate($rules);
+
+    if ($request->file('img')) {
+        if ($request->oldImage) {
+            Storage::delete($request->oldImage);
+        }
+        $validateData['img'] = $request->file('img')->store('post-images');
+    }
+
     $validateData['user_id'] = auth()->User()->id;
 
     $validateData['excerpt'] = Str::limit(strip_tags($request->Body,250));
@@ -146,7 +155,10 @@ class DashboardPostController extends Controller
     {
 
     Posting::destroy($Post->id);
-
+    if ($Post->img) {
+            Storage::delete($Post->img);
+        }
+    Posting::destroy($Post->id);
     return redirect('/Dashboard/Posts')->with('success','New Posts has been deleted!!');
     }
 

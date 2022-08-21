@@ -7,7 +7,7 @@
 </div>
 <div class="container">
 <div class="col-lg-6">
-<form action="/Dashboard/Posts/{{ $Post->slug }}" method="post">
+<form action="/Dashboard/Posts/{{ $Post->slug }}" method="post" enctype="multipart/form-data">
 @csrf
 @method('put')
   <div class="mb-3">
@@ -20,9 +20,15 @@
     @enderror
   </div>
    <div class="mb-3">
+   @if ($Post->img)
+     <img src="{{ asset('storage/'.$Post->img) }}"  class="img-preview img-fluid d-block">
+   @else
+     <img  class="img-preview img-fluid">
+   @endif
     <label for="img" class="form-label">Image</label>
-    <input type="text" class="form-control  @error('Img') is-invalid @enderror " id="img"   name="img" autofocus value="{{ old('img' , $Post->img) }}" required>
-    @error('Title')
+    <input type="hidden" value="{{ $Post->img }}" name="oldImage">
+    <input type="file" class="form-control  @error('Img') is-invalid @enderror " id="image"   name="img" autofocus value="{{ old('img' , $Post->img) }}" onchange="previewImage()" required>
+    @error('Img')
         <div class="invalid-feedback">
         {{ $message }}
         </div>
@@ -84,5 +90,19 @@ fetch('/Dashboard/Posts/checkSlug?Title='+title.value)
 
 });
 
+function previewImage(){
+const image = document.querySelector('#image');
+const imagePreview= document.querySelector('.img-preview');
+
+imagePreview.style.display="block";
+
+const oFReader = new FileReader();
+oFReader.readAsDataURL(image.files[0]);
+
+oFReader.onload = function(oFREvent){
+imagePreview.src = oFREvent.target.result;
+}
+
+}
 </script>
 @endsection

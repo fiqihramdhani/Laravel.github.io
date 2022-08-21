@@ -83,7 +83,7 @@ and is wrapped around the whole page content, except for the footer in this exam
 
 <!-- END Introduction Menu -->
 </div>
-
+<div class="container">
 <div id="disqus_thread" class="mt-4 px-5"></div>
 <script>
     /**
