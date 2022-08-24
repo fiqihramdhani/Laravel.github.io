@@ -33,14 +33,14 @@ use App\Http\Controllers\DashboardPostController;
 
 
 Route::get('/', [HomeController::class, 'index']);
-Route::get('/HomePost/{Post:slug}',[HomeController::class, 'show']);
+Route::get('/HomePost/{Post:slug}', [HomeController::class, 'show']);
 
 Route::get('/Blog', [PostController::class, 'index']);
-Route::get('/Post/{Post:slug}',[PostController::class, 'show']);
+Route::get('/Post/{Post:slug}', [PostController::class, 'show']);
 
 
 Route::get('/Contact', function () {
-    return view('Contact',[
+    return view('Contact', [
         "title" => "My Website - Contact"
     ]);
 });
@@ -50,7 +50,7 @@ Route::get('/Contact', function () {
 Route::get('/About', [AboutController::class, 'index']);
 
 Route::get('/Categories', [CategoryController::class, 'index']);
-Route::get('/Categories/{Category:slug}',[CategoryController::class, 'show']);
+Route::get('/Categories/{Category:slug}', [CategoryController::class, 'show']);
 
 Route::get('/User/{users}', [UserController::class, 'index']);
 
@@ -71,3 +71,7 @@ Route::get('/Dashboard/Home/Posts/homeCheckSlug', [HomePostsController::class, '
 Route::resource('/Dashboard/Home/Posts', HomePostsController::class)->middleware('auth');
 
 
+//social media authentication
+
+Route::get('/Sign/google/redirect', [SignController::class, 'googleRedirect'])->name('googleRedirect')->middleware('guest');
+Route::get('/Sign/google/callback', [SignController::class, 'googleCallback'])->name('googleCallback')->middleware('guest');

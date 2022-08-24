@@ -19,10 +19,10 @@ class DashboardPostController extends Controller
      */
     public function index()
     {
-       return view('Dashboard.Posts.index',[
+        return view('Dashboard.Posts.index', [
             "title" => "My Website | Dashboard - Post",
-            "Posts" => Posting::where('user_id' , auth()->User()->id)->get()
-             ]);
+            "Posts" => Posting::where('user_id', auth()->User()->id)->get()
+        ]);
     }
 
     /**
@@ -32,9 +32,9 @@ class DashboardPostController extends Controller
      */
     public function create()
     {
-        return view('Dashboard.Posts.Create',[
+        return view('Dashboard.Posts.Create', [
             "Categories" => Category::all()
-             ]);
+        ]);
     }
 
     /**
@@ -45,24 +45,24 @@ class DashboardPostController extends Controller
      */
     public function store(Request $request)
     {
-    $validateData = $request->validate([
-    'Title' => 'required|max:255',
-    'img' => 'image|file|max:2024',
-    'category_id' => 'required',
-    'Judul_Posting' => 'required','max:255',
-    'slug' => 'required',
-    'Body' => 'required'
-    ]);
+        $validateData = $request->validate([
+            'Title' => 'required|max:255',
+            'img' => 'image|file|max:2024',
+            'category_id' => 'required',
+            'Judul_Posting' => 'required', 'max:255',
+            'slug' => 'required',
+            'Body' => 'required'
+        ]);
 
-    if ($request->file('img')) {
-        $validateData['img'] = $request->file('img')->store('post-images');
-    }
+        if ($request->file('img')) {
+            $validateData['img'] = $request->file('img')->store('post-images');
+        }
 
-    $validateData['user_id'] = auth()->User()->id;
-    $validateData['excerpt'] = Str::limit(strip_tags($request->Body, 250));
-    Posting::create($validateData);
+        $validateData['user_id'] = auth()->User()->id;
+        $validateData['excerpt'] = Str::limit(strip_tags($request->Body, 250));
+        Posting::create($validateData);
 
-    return redirect('/Dashboard/Posts')->with('success','New Posts has been added!!');
+        return redirect('/Dashboard/Posts')->with('success', 'New Posts has been added!!');
     }
 
     /**
@@ -71,19 +71,17 @@ class DashboardPostController extends Controller
      * @param  \App\Models\Posting  $posting
      * @return \Illuminate\Http\Response
      */
-    public function show( Posting $Post)
+    public function show(Posting $Post)
     {
-    if($Post->User->id !== auth()->User()->id) {
-     abort(403);
-    }
+        if ($Post->User->id !== auth()->User()->id) {
+            abort(403);
+        }
 
-        return view ('Dashboard.Posts.Show',[
-        "Post" => $Post
+        return view('Dashboard.Posts.Show', [
+            "Post" => $Post
 
 
         ]);
-
-
     }
 
     /**
@@ -95,15 +93,14 @@ class DashboardPostController extends Controller
     public function edit(Posting $Post)
     {
 
-    if($Post->User->id !== auth()->User()->id) {
-     abort(403);
-    }
+        if ($Post->User->id !== auth()->User()->id) {
+            abort(403);
+        }
 
-        return view('Dashboard.Posts.Edit',[
+        return view('Dashboard.Posts.Edit', [
             'Post' => $Post,
             "Categories" => Category::all()
-             ]);
-
+        ]);
     }
 
     /**
@@ -115,34 +112,33 @@ class DashboardPostController extends Controller
      */
     public function update(Request $request, Posting $Post)
     {
-     $rules = [
-    'Title' => 'required|max:255',
-    'img' => 'required',
-    'category_id' => 'required',
-    'Judul_Posting' => 'required','max:255',
-    'Body' => 'required'
-    ];
+        $rules = [
+            'Title' => 'required|max:255',
+            'img' => 'required',
+            'category_id' => 'required',
+            'Judul_Posting' => 'required', 'max:255',
+            'Body' => 'required'
+        ];
 
-    if ($request->slug != $Post->slug) {
-        $rules['slug']= 'required';
-
-    }
-    $validateData =$request->validate($rules);
-
-    if ($request->file('img')) {
-        if ($request->oldImage) {
-            Storage::delete($request->oldImage);
+        if ($request->slug != $Post->slug) {
+            $rules['slug'] = 'required';
         }
-        $validateData['img'] = $request->file('img')->store('post-images');
-    }
+        $validateData = $request->validate($rules);
 
-    $validateData['user_id'] = auth()->User()->id;
+        if ($request->file('img')) {
+            if ($request->oldImage) {
+                Storage::delete($request->oldImage);
+            }
+            $validateData['img'] = $request->file('img')->store('post-images');
+        }
 
-    $validateData['excerpt'] = Str::limit(strip_tags($request->Body,250));
-    Posting::where('id', $Post->id)
-        ->update ($validateData);
+        $validateData['user_id'] = auth()->User()->id;
 
-    return redirect('/Dashboard/Posts')->with('success','Post has been Updated!!');
+        $validateData['excerpt'] = Str::limit(strip_tags($request->Body, 250));
+        Posting::where('id', $Post->id)
+            ->update($validateData);
+
+        return redirect('/Dashboard/Posts')->with('success', 'Post has been Updated!!');
     }
 
     /**
@@ -154,19 +150,17 @@ class DashboardPostController extends Controller
     public function destroy(Posting $Post)
     {
 
-    Posting::destroy($Post->id);
-    if ($Post->img) {
+        Posting::destroy($Post->id);
+        if ($Post->img) {
             Storage::delete($Post->img);
         }
-    Posting::destroy($Post->id);
-    return redirect('/Dashboard/Posts')->with('success','New Posts has been deleted!!');
+        Posting::destroy($Post->id);
+        return redirect('/Dashboard/Posts')->with('success', 'New Posts has been deleted!!');
     }
 
     public function checkSlug(Request $request)
     {
         $slug = SlugService::createSlug(Posting::class, 'slug', $request->Title);
-        return response()->json(['slug'=> $slug ]);
+        return response()->json(['slug' => $slug]);
     }
-
-
 }

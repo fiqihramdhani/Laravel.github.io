@@ -1,65 +1,72 @@
 <header>
-  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="/" style="font-family: Pacifico" >MY - WEBSITE</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav me-auto  mb-lg-0 ">
-        <li class="nav-item">
-          <a class="nav-link {{ Request::is('/')? 'active': '' }}" aria-current="page" href="/">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link {{ Request::is('Blog')? 'active': '' }}" href="/Blog">Blog</a>
-        </li>
-         <li class="nav-item">
-          <a class="nav-link {{ Request::is('About')? 'active': '' }}" href="/About">About</a>
-        </li>
-         <li class="nav-item">
-          <a class="nav-link {{ Request::is('Contact')? 'active': '' }}" href="#Contact">Contact</a>
-        </li>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/" style="font-family: Pacifico">MY - WEBSITE</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav me-auto  mb-lg-0 ">
+                    <li class="nav-item">
+                        <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" aria-current="page"
+                            href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ Request::is('Blog') ? 'active' : '' }}" href="/Blog">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ Request::is('About') ? 'active' : '' }}" href="/About">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ Request::is('Contact') ? 'active' : '' }}" href="#Contact">Contact</a>
+                    </li>
 
-      </ul>
-      <ul class="navbar-nav">
-
-
-       @auth
-        <li class="nav-item dropdown" >
-          <a class="nav-link dropdown-toggle text-center"  id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Welcome , {{ auth()->User()->name }}<i class="bi bi-emoji-sunglasses-fill px-2"></i>
-          </a>
+                </ul>
+                <ul class="navbar-nav">
 
 
-
-          <ul class="dropdown-menu  mt-1 " aria-labelledby="navbarDropdown" style="width: 100%">
-           @can('admin')
-            <li><a class="dropdown-item " href="/Dashboard"><i class="bi bi-menu-button-wide" style="margin-right: 25px"></i>Dashboard</a></li>
-             <li><hr class="dropdown-divider"></li>
-            <li>
-
-            @endcan
+                    @auth
 
 
-                <form action="/SignOut" method="POST">
-                @csrf
-                <button class="dropdown-item " type="submit"><i class="bi bi-box-arrow-right" style="margin-right: 25px"></i>SignOut</button>
-
-                </form>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-center" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Welcome , {{ Auth::user()->name }}<i class="bi bi-emoji-sunglasses-fill px-2"></i>
+                            </a>
 
 
 
-          @else
 
-            <li><a class="btn btn-primary " href="/Sign">Sign in</a></li>
+                            <ul class="dropdown-menu  mt-1 " aria-labelledby="navbarDropdown" style="width: 100%">
 
-          @endauth
+                                <li><a class="dropdown-item " href="/Dashboard"><i class="bi bi-menu-button-wide"
+                                            style="margin-right: 25px"></i>Dashboard</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li>
 
-        </li>
-        </ul>
-        </li>
-      </ul>
-      </div>
-    </div>
-  </nav>
+
+
+                                    <form action="/SignOut" method="POST">
+                                        @csrf
+                                        <button class="dropdown-item " type="submit"><i class="bi bi-box-arrow-right"
+                                                style="margin-right: 25px"></i>SignOut</button>
+
+                                    </form>
+                                @else
+                                <li><a class="btn btn-primary " href="/Sign">Sign in</a></li>
+
+
+
+                        </li>
+                    </ul>
+                    </li>
+                    </ul>
+
+                @endauth
+            </div>
+        </div>
+    </nav>
 </header>
